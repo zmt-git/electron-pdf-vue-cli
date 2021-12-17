@@ -1,0 +1,13 @@
+{
+  "exclude": ["node_modules"],
+  "typeAcquisition": {
+    "include": [
+      "core-js",
+      "fs-extra",
+      "gm",
+      "node-poppler",
+      "pdfkit",
+      "vue"
+    ]
+  }
+}
