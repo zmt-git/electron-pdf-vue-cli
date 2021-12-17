@@ -45,7 +45,7 @@ export default function initIpcMain (win: BrowserWindow) {
 
       event.reply('msg', 'PDF转换中...')
       // pdf转img
-      // await pdfToImg()
+      await pdfToImg()
 
       event.reply('msg', 'PDF转换完成')
 
@@ -79,12 +79,12 @@ export default function initIpcMain (win: BrowserWindow) {
       event.reply('msg', 'PDF生成中...')
 
       // 已添加文字图片生成PDF文件
-      // imgToPDF(() => {
-      //   event.reply('msg', 'PDF生成完成')
-      //   event.reply('success')
-      //   // PDF文件生成后，删除已添加文字图片
-      //   fs.removeSync(path.join(__dirname, dir.resolve))
-      // })
+      imgToPDF(() => {
+        event.reply('msg', 'PDF生成完成')
+        event.reply('success')
+        // PDF文件生成后，删除已添加文字图片
+        fs.removeSync(path.join(__dirname, dir.resolve))
+      })
     } catch (e) {
       event.reply('error', e)
     }
